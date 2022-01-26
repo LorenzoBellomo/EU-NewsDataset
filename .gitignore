@@ -1,5 +1,6 @@
 .ipynb_checkpoints
 topic_modelling/by_text_mining/results
+topic_modelling/topics_by_url
 SSH
 data
 mappings/url2leaning.json
