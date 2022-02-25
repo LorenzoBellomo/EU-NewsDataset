@@ -28,8 +28,8 @@ documents = {a: cleanup(b) for a, b in lowercase.items() if a in keys}
 
 targets = ['sport', 'politics', 'news', 'tech', 'economy', 'society', 'environment', 'science', 'brexit', 'opinion']
 
-topic_model = BERTopic(verbose=True)
-topics, _ = topic_model.fit_transform(documents.values(), y=targets, language="multilingual", n_gram_range=(1,2), calculate_probabilities=False, low_memory=True)
+topic_model = BERTopic(verbose=True, language="multilingual", n_gram_range=(1,2), calculate_probabilities=False, low_memory=True)
+topics, _ = topic_model.fit_transform(documents.values(), y=targets)
 
 print(topic_model.get_topic_info())
 
