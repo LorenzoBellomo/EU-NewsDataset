@@ -27,7 +27,10 @@ def create_csv(s, i):
     for x in [f for f in os.listdir(s) if os.path.isfile(os.path.join(s, f))]:
         file_path = s +'/' + x
         with open(file_path, 'r') as json_file:
-            document = json.load(json_file)
+            try:
+                document = json.load(json_file)
+            except:
+                continue
         source = document['source_domain']
 
         docs['id'].append(x)
