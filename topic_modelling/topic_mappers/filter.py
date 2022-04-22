@@ -27,5 +27,17 @@ unique_ = []
 for x in unique:
     if x not in rev_l:
         unique_.append(x)
+        rev_l.append(x)
 with open("unique_500.json", 'w') as json_file:
+    json.dump(unique_, json_file)
+
+with open("unique_50.json", 'r') as json_file:
+    unique = json.load(json_file)
+
+unique_ = []
+for x in unique:
+    if x not in rev_l:
+        unique_.append(x)
+        rev_l.append(x)
+with open("unique_50.json", 'w') as json_file:
     json.dump(unique_, json_file)
