@@ -4,7 +4,7 @@ import json
 import re
 from collections import defaultdict
 
-with open("EU-NewsDataset/topic_modelling/topic_dump_revised.json", 'r') as json_file:
+with open("EU-NewsDataset/topic_modelling/topic_mappers/topic_dump_revised.json", 'r') as json_file:
     topics_gt = json.load(json_file)
 topics = list(topics_gt.keys())
 
