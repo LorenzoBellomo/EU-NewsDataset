@@ -5,6 +5,7 @@ SSH
 data
 mappings/url2leaning.json
 mappings/Eurotopics_media_label.csv
+mappings/url_id_mapping.json
 topic_modelling/dump
 models
 mappings/Eurotopics_media_label.xls
