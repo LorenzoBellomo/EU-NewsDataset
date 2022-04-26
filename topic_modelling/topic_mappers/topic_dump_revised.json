@@ -1,5 +1,12 @@
 {
     "entertainment": [
+        "food-and-drink",
+        "food",
+        "recipes",
+        "artes",
+        "arts-expositions",
+        "viihdeuutiset",
+        "fashion",
         "medien",
         "video",
         "music",
@@ -37,13 +44,19 @@
         "artikkeli",
         "literatur",
         "papel",
-        "editorial"
+        "moda",
+        "tv-news",
+        "celebrity-news",
+        "art",
+        "artanddesign"
     ],
     "coronavirus": [
         "coronavirus",
         "koronawirus-sars-cov-2"
     ],
     "economy": [
+        "dow-jones",
+        "business",
         "economia",
         "economie",
         "ekonomi",
@@ -77,9 +90,17 @@
         "personalfinance",
         "gazdasag",
         "banca---financas",
-        "financieel"
+        "financieel",
+        "business-news",
+        "borsiuudised",
+        "empresas",
+        "entreprises-startup", "industrie", "marktberichte","wirtschaft",
+        "wirtschaft_nt", "print_wirtschaft","talous"
+
     ],
     "politics": [
+        "ledare",
+        "elections-presidentielle-legislatives-2017",
         "politiikka",
         "politik",
         "politiques",
@@ -100,20 +121,12 @@
         "politiretsvaesen",
         "polityka",
         "print_politik",
-        "donald-trump"
-    ],
-    "news": [
-        "cronache",
-        "cronaca",
-        "esteri",
-        "ultima-ora",
-        "ultima-hora",
-        "vijesti",
-        "breakingnews",
-        "world-news",
-        "notizie-ultima-ora"
+        "donald-trump",
+        "brexit"
     ],
     "sport": [
+        "othersport",
+        "omnisport",
         "calcio",
         "primera-division",
         "wwe",
@@ -172,9 +185,22 @@
         "sport-news",
         "sport_nt",
         "print_sport",
-        "sportsnews"
+        "sportsnews",
+        "match-reports",
+        "european-cup"
+
     ],
     "society": [
+        "planete",
+        "life",
+        "life-and-style",
+        "kultura",
+        "kulttuuri",
+        "cultura",
+        "culture",
+        "kultur",
+        "vida-e-futuro",
+        "lifeandstyle",
         "societe",
         "health",
         "people",
@@ -189,7 +215,12 @@
         "health-fitness",
         "health-family",
         "social-affairs",
-        "soziales"
+        "soziales",
+        "scuola", 
+        "salute",
+        "education",
+        "spoleczenstwo",
+        "lifestyle"
     ],
     "science": [
         "digital",
@@ -231,6 +262,7 @@
         "debat",
         "mielipide",
         "debatte",
-        "debate"
+        "debate",
+        "editorial"
     ]
 }

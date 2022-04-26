@@ -8,7 +8,7 @@ with open("EU-NewsDataset/topic_modelling/topic_dump_revised.json", 'r') as json
     topics_gt = json.load(json_file)
 topics = list(topics_gt.keys())
 
-df = pd.read_csv("EUNewsArticles.csv")
+df = pd.read_csv("EUNewsArticles.csv", index_col=False)
 regex = r"\b((?:https?:\/\/)?(?:(?:www\.)?((?:[\da-z\.-]+)\.(?:[a-z]{2,6})))((?:\/[\w\.-]*)*\/?))\b"
 topic = None
 print("BEFORE: ", len(df))
@@ -29,5 +29,5 @@ count['before'] = len(df)
 count['after'] = len([a for a in column if a])
 
 df['topic'] = column
-df.to_csv("EUNewsArticles_w_topics.csv")
+df.to_csv("EUNewsArticles_w_topics.csv", index=False)
 print(count)
