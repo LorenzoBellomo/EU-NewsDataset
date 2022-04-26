@@ -40,7 +40,7 @@ def clean_text(df, punt, to_clean):
     regex_pat8 = re.compile(r'\S+\/(\w+)\/\S+', flags=re.IGNORECASE) #remove '/tag/'
     df[to_clean] = df[to_clean].str.replace(regex_pat8, " ")
     print('done')
-    regex_pat9 = re.compile(r'[^.]*(FOTO|IMAGE|VIDEO)[^.]*') #remove references to foto, video, images
+    regex_pat9 = re.compile(r'[^.]*(FOTO|IMAGE|VIDEO|GETTY)[^.]*') #remove references to foto, video, images
     df[to_clean] = df[to_clean].str.replace(regex_pat9, " ")
     print('done')
     df[to_clean] = df[to_clean].str.replace('mehr dazu hier'," ")
@@ -58,8 +58,11 @@ def clean_text(df, punt, to_clean):
     print('done')
     media = set(df['source_name'].to_list())
     media = list(media)
+    media_upper = [elem.upper() for elem in media]
+    
     print('done')
     df[to_clean] = df[to_clean].str.replace('|'.join(media),' ') # remove all media names
+    df[to_clean] = df[to_clean].str.replace('|'.join(media_upper),' ')
     
     ## drop punctuation in the dataset in which it is required
     if punt == False:
@@ -72,31 +75,59 @@ def clean_text(df, punt, to_clean):
 '''
     all data textual fields cleaning
 '''
-### all data maintext
+'''
+### training data maintext
 print('\n')
 print('----------------------------------')
 print('all data maintext')
 print('----------------------------------')
 print('\n')
-df = pd.read_csv('/homenfs/l.bellomo1/BiasClassification/data/all_data_eu.csv')
+df = pd.read_csv('/homenfs/l.bellomo1/EU-NewsDataset/topic_modelling/data/training_with_topics.csv')
 print(len(df))
-punt = True
+punt = False
 filtered_df = clean_text(df, punt, to_clean="maintext")
-filtered_df.to_csv('/homenfs/l.bellomo1/BiasClassification/data/all_data_eu_cleaned.csv', index=False)
+filtered_df.to_csv('/homenfs/l.bellomo1/EU-NewsDataset/topic_modelling/data/training_with_topics_cleaned.csv', index=False)
 print(filtered_df.head(5))
 print(len(filtered_df))
-
-### all data title
+'''
+### training data title
 print('\n')
 print('----------------------------------')
 print('all data title')
 print('----------------------------------')
 print('\n')
-df = pd.read_csv('/homenfs/l.bellomo1/BiasClassification/data/all_data_eu.csv')
+df = pd.read_csv('/homenfs/l.bellomo1/EU-NewsDataset/topic_modelling/data/training_with_topics_cleaned.csv')
 print(len(df))
-punt = True
+punt = False
 filtered_df = clean_text(df, punt, to_clean="title")
-filtered_df.to_csv('/homenfs/l.bellomo1/BiasClassification/data/all_data_eu_cleaned.csv', index=False)
+filtered_df.to_csv('/homenfs/l.bellomo1/EU-NewsDataset/topic_modelling/data/training_with_topics_cleaned.csv', index=False)
 print(filtered_df.head(5))
 print(len(filtered_df))
-
+'''
+### test data maintext
+print('\n')
+print('----------------------------------')
+print('all data maintext')
+print('----------------------------------')
+print('\n')
+df = pd.read_csv('/homenfs/l.bellomo1/EU-NewsDataset/topic_modelling/data/test_with_topics.csv')
+print(len(df))
+punt = False
+filtered_df = clean_text(df, punt, to_clean="maintext")
+filtered_df.to_csv('/homenfs/l.bellomo1/EU-NewsDataset/topic_modelling/data/test_with_topics_cleaned.csv', index=False)
+print(filtered_df.head(5))
+print(len(filtered_df))
+'''
+### test data title
+print('\n')
+print('----------------------------------')
+print('all data title')
+print('----------------------------------')
+print('\n')
+df = pd.read_csv('/homenfs/l.bellomo1/EU-NewsDataset/topic_modelling/data/test_with_topics_cleaned.csv')
+print(len(df))
+punt = False
+filtered_df = clean_text(df, punt, to_clean="title")
+filtered_df.to_csv('/homenfs/l.bellomo1/EU-NewsDataset/topic_modelling/data/test_with_topics_cleaned.csv', index=False)
+print(filtered_df.head(5))
+print(len(filtered_df))
