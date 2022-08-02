@@ -27,7 +27,6 @@ city = {
 
 article_type_1, article_type_2, article_type_grp_list = [], [], []
 topic_1, topic_2, topic_grp_list = [], [], []
-missing = {'city': set(), 'planet': set()}
 for t1, t2, domain in zip(df.translated_tag1, df.translated_tag2, df.source_domain):
     topic_grp, article_type_grp = '', ''
     handle = [(1, t1), (2, t2)]
