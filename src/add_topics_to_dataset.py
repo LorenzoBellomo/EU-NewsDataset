@@ -33,9 +33,15 @@ for t1, t2, domain in zip(df.translated_tag1, df.translated_tag2, df.source_doma
     for i, t in handle:
         topic, article_type = None, None
         if t == 'planet':
-            topic = planet[domain]
+            if planet[domain].startswith("article_type"):
+                article_type = planet[domain]
+            else:
+                topic = planet[domain]
         elif t == 'city':
-            topic = city[domain]
+            if city[domain].startswith("article_type"):
+                article_type = city[domain]
+            else:
+                topic = city[domain]
         elif t in topics and topics[t]:
             if topics[t].startswith("article_type"):
                 article_type = topics[t]
